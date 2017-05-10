@@ -1,0 +1,26 @@
+Write a program to calculate the power of any number using recursion.
+
+Test Data :
+Input the base value : 5 
+Input the exponent : 3 
+Expected Output : 
+The value of 5 to the power of 3 is : 125 
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("Input the base number:")
+        Dim intBase As Integer = Console.ReadLine()
+        Console.WriteLine("Input the exponent:")
+        Dim intExponent As Integer = Console.ReadLine()
+        Console.WriteLine("The base " & intBase & " raised to the power " & intExponent & " is " & ComputePower(intBase, intExponent))
+    End Sub
+
+    Private Function ComputePower(ByVal intB As Integer, ByVal intE As Integer) As Integer
+        If intE = 0 Then
+            Return 1
+        Else
+            Return (intB * ComputePower(intB, intE - 1))
+        End If
+    End Function
+
+End Module

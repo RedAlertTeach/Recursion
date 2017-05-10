@@ -1,0 +1,24 @@
+Write a program to convert a decimal number to binary using recursion.
+
+Test Data :
+Input a decimal number : 66 
+Expected Output : 
+The binary equivalent of 66 is : 1000010
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("Enter the decimal number to convert to binary:")
+        Dim intNumber As Integer = Console.ReadLine()
+        Console.WriteLine("The decimal number " & intNumber & " converted to binary is " & ConvertToBinary(intNumber))
+    End Sub
+    Private Function ConvertToBinary(ByVal intNo As Integer) As String
+        If intNo = 0 Then
+            Return ""
+        ElseIf intNo Mod 2 = 1 Then
+            Return (ConvertToBinary(intNo \ 2) & "1")
+        Else
+            Return (ConvertToBinary(intNo \ 2) & "0")
+        End If
+    End Function
+
+End Module

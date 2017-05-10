@@ -1,0 +1,23 @@
+Write a program to count the number of digits in a number using recursion.
+
+Test Data :
+Input any number : 12345 
+Expected Output : 
+The number 12345 contains number of digits : 5 
+
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter a number to count the digits of")
+        intNumber = Convert.ToInt32(Console.ReadLine())
+        Console.Write("The number " & intNumber & " has " & NumberOfDigits(intNumber) & " digits.")
+    End Sub
+    Private Function NumberOfDigits(ByRef intNum As Integer) As Integer
+        If intNum > 0 Then
+            Return NumberOfDigits((intNum - (intNum Mod 10)) / 10) + 1
+        Else
+            Return 0
+        End If
+    End Function
+End Module

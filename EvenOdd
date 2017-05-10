@@ -1,0 +1,50 @@
+Write a program to print even or odd numbers in a given range using recursion.
+
+Test Data :
+Input the range to print starting from 1 : 20 
+Expected Output : 
+All even numbers from 1 to 20 are : 
+2 4 6 8 10 12 14 16 18 20 
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter the number to print even numbers to:")
+        intNumber = Console.ReadLine()
+        WriteEven(intNumber)
+    End Sub
+    Private Sub WriteEven(ByVal intTop As Integer)
+        If intTop > 0 Then
+            WriteEven(intTop - 1)
+            If intTop Mod 2 = 0 Then
+                Console.Write(intTop)
+            Else
+                Console.Write(" ")
+            End If
+        End If
+    End Sub
+End Module
+
+
+All odd numbers from 1 to 20 are : 
+1 3 5 7 9 11 13 15 17 19 
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter the number to print odd numbers to:")
+        intNumber = Console.ReadLine()
+        WriteOdd(intNumber)
+    End Sub
+    Private Sub WriteOdd(ByVal intTop As Integer)
+        If intTop > 0 Then
+            WriteOdd(intTop - 1)
+            If intTop Mod 2 = 0 Then
+                Console.Write(" ")
+            Else
+                Console.Write(intTop)
+            End If
+        End If
+    End Sub
+
+End Module

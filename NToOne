@@ -1,0 +1,22 @@
+Write a program to print numbers from n down to 1 using recursion.
+Test Data:
+How many numbers to print : 10 
+Expected Output : 
+10 9 8 7 6 5 4 3 2 1
+
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter a number to count down from")
+        intNumber = Convert.ToInt32(Console.ReadLine())
+        CountDown(intNumber)
+    End Sub
+
+    Private Sub CountDown(ByVal intBottom As Integer)
+        If intBottom > 0 Then
+            Console.Write(intBottom & " ")
+            CountDown(intBottom - 1)
+        End If
+    End Sub
+End Module

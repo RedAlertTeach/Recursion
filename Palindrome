@@ -1,0 +1,36 @@
+Write a program to check whether a given String is Palindrome or not using recursion.
+
+Test Data :
+Input a string : RADAR 
+Expected Output : 
+The string is Palindrome.
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("Enter the words to determine whether or not a palindrome:")
+        Dim strWord As String = Console.ReadLine()
+        If DeterminePalindrome(strWord) Then
+            Console.WriteLine(strWord & " is a palindrome.")
+        Else
+            Console.WriteLine(strWord & " is not a palindrome.")
+        End If
+    End Sub
+    Private Function DeterminePalindrome(ByVal strTheWord As String) As Boolean
+        If strTheWord.Length = 0 Or strTheWord.Length = 1 Then
+            Return True
+        Else
+            Dim chrFirstChar As Char = strTheWord(0)
+            Dim chrLastChar As Char = strTheWord(strTheWord.Length - 1)
+            If chrFirstChar = chrLastChar Then
+                Dim intNewLength As Integer = strTheWord.Length - 2
+                If intNewLength < 3 Then
+                    intNewLength = 1
+                End If
+                Dim strNewWord As String = strTheWord.Substring(1, intNewLength)
+                Return DeterminePalindrome(strNewWord)
+            Else
+                Return False
+            End If
+        End If
+    End Function
+End Module

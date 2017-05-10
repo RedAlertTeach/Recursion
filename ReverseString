@@ -1,0 +1,22 @@
+Write a program to get the reverse of a string using recursion. 
+
+Test Data :
+Input the string : w3resource 
+Expected Output : 
+The reverse of the string is : ecruoser3w 
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("Enter a string to reverse:")
+        Dim strInput As String = Console.ReadLine()
+        Console.WriteLine("The string " & strInput & " reversed is " & ReverseIt(strInput))
+    End Sub
+    Private Function ReverseIt(ByVal strReverseMe As String) As String
+        If strReverseMe.Length = 1 Then
+            Return strReverseMe
+        Else
+            Return (strReverseMe(strReverseMe.Length - 1) & ReverseIt(strReverseMe.Substring(0, strReverseMe.Length - 1)))
+        End If
+    End Function
+
+End Module

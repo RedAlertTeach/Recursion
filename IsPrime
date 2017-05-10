@@ -1,0 +1,30 @@
+Write a program to check whether a number is prime or not using recursion.
+
+Test Data :
+Input any positive number : 37 
+Expected Output : 
+The number 37 is a prime number. 
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter any positive number")
+        intNumber = Convert.ToInt32(Console.ReadLine())
+        If DeterminePrimeness(intNumber, 2) Then
+            Console.WriteLine(intNumber & " is a prime number.")
+        Else
+            Console.WriteLine(intNumber & " is NOT a prime number.")
+        End If
+    End Sub
+    Private Function DeterminePrimeness(ByVal intNum As Integer, ByVal intFactor As Integer) As Boolean
+        If intFactor <= 9 Then
+            If intNum Mod intFactor = 0 Then
+                Return False
+            Else
+                Return DeterminePrimeness(intNum, intFactor + 1)
+            End If
+        Else
+            Return True
+        End If
+    End Function
+End Module

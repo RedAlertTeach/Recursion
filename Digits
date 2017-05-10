@@ -1,0 +1,22 @@
+Write a program to display the individual digits of a given number using recursion.
+
+Test Data :
+Input any number : 1234 
+Expected Output : 
+The digits in the number 1234 are : 1 2 3 4
+Module Module1
+
+    Sub Main()
+        Dim intNumber As Integer
+        Console.WriteLine("Enter a number to determine the digits of.")
+        intNumber = Convert.ToInt32(Console.ReadLine())
+        Console.Write("The digits in the number " & intNumber & " are: ")
+        Digitize(intNumber)
+    End Sub
+    Private Sub Digitize(ByVal intNum As Integer)
+        If intNum > 0 Then
+            Digitize((intNum - (intNum Mod 10)) / 10)
+            Console.Write(intNum Mod 10 & " ")
+        End If
+    End Sub
+End Module
